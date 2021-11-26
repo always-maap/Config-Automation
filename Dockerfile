@@ -1,5 +1,5 @@
-FROM ubuntu:focal
+FROM archlinux
 WORKDIR /usr/local/bin
-RUN apt update && apt install -y curl git ansible
+RUN pacman -Syu --noconfirm && pacman -S curl git ansible vim --noconfirm
 COPY . .
-CMD ["sh", "-c", "ansible-playbook $TAGS local.yml"] 
+#CMD ["sh", "-c", "ansible-playbook $TAGS local.yml"]

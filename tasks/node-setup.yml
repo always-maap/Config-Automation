@@ -1,0 +1,21 @@
+- name: Install nvm
+  shell: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+  tags:
+    - install
+    - productivity
+    - dotfiles
+    - node 
+- name: Install node 16 via nvm
+  shell: nvm install 16 && export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+  tags:
+    - install
+    - dotfiles
+    - productivity
+    - node
+- name: Install yarn via npm
+  shell: npm i -g yarn
+  tags:
+    - install
+    - productivity
+    - dotfiles
+    - node

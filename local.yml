@@ -2,3 +2,4 @@
   become: true
   tasks:
     - include: tasks/zsh-setup.yml
+    - include: tasks/node-setup.yml
